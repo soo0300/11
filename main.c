@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void swap(int *x, int *y){
+	int temp;
+	temp=*x;
+	*x=*y;
+	*y=temp;
+} 
+
 void main(void){
-	int i=300;  
-	int *pi=&i; //4byte 변수 pi가 4byte 대상을 가르킴 
-	char *pc=&i;//4byte 변수 pc가 1byte 대상을 가르킴 -> i의 1byte만큼만 저장  
-	
-	printf("%i, %i, %i",i,*pi,*pc);
+	int a=3; int b=5;
+	swap(&a,&b);
+	printf("a: %i\nb: %i",a,b);
 }
